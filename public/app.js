@@ -211,5 +211,10 @@ btnRecalibrate.addEventListener('click', () => {
   btnCalibrate.disabled = false;
 });
 
+// ── Check mic availability on load ──
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+  showScreen('screen-popout');
+}
+
 // ── Init ──
 initZoom();
