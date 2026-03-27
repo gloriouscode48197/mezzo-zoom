@@ -213,8 +213,11 @@ btnRecalibrate.addEventListener('click', () => {
 });
 
 // ── Check mic availability on load ──
+// navigator.mediaDevices requires secure context + Permissions-Policy: microphone=*
 if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
   showScreen('screen-popout');
+} else {
+  showScreen('screen-calibrate');
 }
 
 document.getElementById('btn-open-browser').addEventListener('click', () => {
