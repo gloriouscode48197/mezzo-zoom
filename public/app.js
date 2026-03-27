@@ -35,6 +35,7 @@ async function notify(title, message) {
 const body = document.body;
 const btnCalibrate = document.getElementById('btn-calibrate');
 const btnStart = document.getElementById('btn-start');
+const debugMsg = document.getElementById('debug-msg');
 const btnStop = document.getElementById('btn-stop');
 const btnRecalibrate = document.getElementById('btn-recalibrate');
 const progressBar = document.getElementById('progress-bar');
@@ -69,6 +70,7 @@ function showScreen(id) {
 
 // ── Calibration ──
 btnCalibrate.addEventListener('click', async () => {
+  debugMsg.textContent = 'Button clicked…';
   btnCalibrate.disabled = true;
   showScreen('screen-calibrating');
 
@@ -76,8 +78,11 @@ btnCalibrate.addEventListener('click', async () => {
   const calCircle = new MezzoVoiceCircle(calCircleContainer, { assetPath: 'assets' });
 
   try {
+    debugMsg.textContent = 'Requesting mic…';
     await audio.acquire();
-  } catch {
+    debugMsg.textContent = 'Mic acquired';
+  } catch (err) {
+    debugMsg.textContent = 'Mic error: ' + (err?.message || err);
     calCircle.destroy();
     showScreen('screen-calibrate');
     btnCalibrate.disabled = false;
