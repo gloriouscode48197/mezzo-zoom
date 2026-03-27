@@ -1,0 +1,155 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Tokens ── */
+:root {
+  --font-display: 'Noto Serif JP', serif;
+  --font-body: 'Sora', sans-serif;
+  --accent: #C4593A;
+}
+
+[data-surface="light"] {
+  --surface: #F0EBE2;
+  --text-primary: #1A1A1A;
+  --text-subdued: #6B6359;
+}
+[data-surface="dark"] {
+  --surface: #111111;
+  --text-primary: #F0EBE2;
+  --text-subdued: #9A9A9A;
+}
+
+/* ── Base ── */
+html, body {
+  height: 100%;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: background-color 400ms ease, color 400ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Screens ── */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 40px 28px;
+  text-align: center;
+}
+.screen.active { display: flex; }
+
+/* ── Typography ── */
+.heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+  transition: color 400ms ease;
+}
+
+.state-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+  transition: color 400ms ease;
+}
+
+.body-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-subdued);
+  max-width: 260px;
+  transition: color 400ms ease;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subdued);
+  transition: color 400ms ease;
+}
+
+.microcopy {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-subdued);
+  text-align: center;
+  transition: color 400ms ease;
+}
+
+/* ── Circle ── */
+.circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+
+/* ── Progress bar ── */
+.progress-bar-wrap {
+  width: 200px;
+  height: 3px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 100ms linear;
+}
+
+/* ── Monitoring card ── */
+.mon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 32px 24px;
+  transition: background-color 400ms ease;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 36px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 200px;
+  transition: opacity 150ms;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px;
+  transition: opacity 150ms;
+}
+.btn-ghost:hover { opacity: 0.7; }

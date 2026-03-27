@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mezzo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-tokens/mezzo-tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-surface="light">
+
+  <!-- ── Screen 1: Calibrate ── -->
+  <div id="screen-calibrate" class="screen active">
+    <h1 class="heading">Set up your<br>baseline volume</h1>
+    <p class="body-text">Talk for a few seconds so Mezzo can learn the speaking level you consider appropriate.</p>
+    <button id="btn-calibrate" class="btn-primary">Measure my volume</button>
+    <p class="microcopy">Nothing is recorded or saved.</p>
+  </div>
+
+  <!-- ── Screen 2: Calibrating (in progress) ── -->
+  <div id="screen-calibrating" class="screen">
+    <p class="tag">Listening…</p>
+    <div id="cal-circle-container" class="circle-container"></div>
+    <p class="body-text">Keep talking at your normal volume.</p>
+    <div class="progress-bar-wrap"><div id="progress-bar" class="progress-bar"></div></div>
+  </div>
+
+  <!-- ── Screen 3: Ready ── -->
+  <div id="screen-ready" class="screen">
+    <h1 class="heading">Ready to monitor</h1>
+    <p class="body-text">Mezzo will stay quiet unless your volume is consistently louder than your calibrated range.</p>
+    <button id="btn-start" class="btn-primary">Start listening</button>
+    <button id="btn-recalibrate" class="btn-ghost">Recalibrate volume</button>
+    <p class="microcopy">Nothing is recorded or saved.</p>
+  </div>
+
+  <!-- ── Screen 4: Monitoring ── -->
+  <div id="screen-monitor" class="screen">
+    <div id="mon-card" class="mon-card" data-surface="light">
+      <h2 id="state-heading" class="state-heading">Within Range</h2>
+      <div id="circle-container" class="circle-container"></div>
+      <button id="btn-stop" class="btn-primary">Stop Monitoring</button>
+      <p class="microcopy">Nothing is recorded or saved.<br>Monitoring stops when you close this tab.</p>
+    </div>
+  </div>
+
+  <script src="https://appssdk.zoom.us/sdk.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

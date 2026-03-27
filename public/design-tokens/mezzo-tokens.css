@@ -1,0 +1,403 @@
+/* ═══════════════════════════════════════════
+   Mezzo Design Tokens — CSS Custom Properties
+   Generated from typography stylesheets
+   ═══════════════════════════════════════════ */
+
+
+/* ── Fonts ── */
+:root {
+  --font-display: 'Noto Serif JP', serif;
+  --font-body: 'Sora', sans-serif;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+}
+
+
+/* ── Surface: Dark (#111111) ── */
+[data-surface="dark"],
+.surface-dark {
+  --surface: #111111;
+  --surface-nav: rgba(17, 17, 17, 0.88);
+  --surface-card: rgba(240, 235, 226, 0.04);
+
+  --text-primary: #F0EBE2;
+  --text-default: #E8E3DA;
+  --text-body: #B8A99A;
+  --text-subdued: #8A827A;
+  --text-ghost: #5A5550;
+
+  --hanko-text: #C4593A;
+  --hanko-glow: rgba(196, 89, 58, 0.12);
+
+  --border: rgba(240, 235, 226, 0.08);
+  --border-outline: rgba(196, 89, 58, 0.4);
+  --border-pip: rgba(240, 235, 226, 0.10);
+
+  --grain-opacity: 0.018;
+}
+
+
+/* ── Surface: Light (#F0EBE2) ── */
+[data-surface="light"],
+.surface-light {
+  --surface: #F0EBE2;
+  --surface-nav: rgba(240, 235, 226, 0.9);
+  --surface-card: rgba(26, 26, 26, 0.03);
+
+  --text-primary: #1A1A1A;
+  --text-default: #2A2A2A;
+  --text-body: #6B6560;
+  --text-subdued: #8A827A;
+  --text-ghost: #C8C0B5;
+
+  --hanko-text: #C4593A;
+  --hanko-glow: rgba(196, 89, 58, 0.10);
+
+  --border: #D8D0C3;
+  --border-outline: rgba(196, 89, 58, 0.4);
+  --border-pip: #D8D0C3;
+
+  --grain-opacity: 0.022;
+}
+
+
+/* ── Surface: Mid-dark (#3A3A3A) ── */
+[data-surface="mid"],
+.surface-mid {
+  --surface: #3A3A3A;
+  --surface-nav: rgba(58, 58, 58, 0.9);
+  --surface-card: #444444;
+
+  --text-primary: #F0EBE2;
+  --text-default: #E8E3DA;
+  --text-body: #C8BEB2;
+  --text-subdued: #A89E94;
+  --text-ghost: #6B6560;
+
+  --hanko-text: #D4694A;
+  --hanko-glow: rgba(212, 105, 74, 0.12);
+
+  --border: rgba(240, 235, 226, 0.10);
+  --border-outline: rgba(212, 105, 74, 0.4);
+  --border-pip: rgba(240, 235, 226, 0.10);
+
+  --grain-opacity: 0.018;
+}
+
+
+/* ── Shared (surface-independent) ── */
+:root {
+  /* Hanko */
+  --hanko-fill: #C4593A;
+  --hanko-hover: #AE4D31;
+  --hanko-on-fill: #F0EBE2;
+
+  /* Radius */
+  --radius-cta: 100px;
+  --radius-pill: 100px;
+  --radius-card: 10px;
+  --radius-icon-btn: 6px;
+
+  /* Spacing */
+  --space-nav: 24px 32px;
+  --space-page-gap: 48px;
+  --space-section: 72px;
+  --space-heading-to-content: 40px;
+  --space-circle-to-button: 48px;
+  --space-button-to-micro: 16px;
+  --space-footer: 20px 32px;
+
+  /* Shadows */
+  --shadow-cta-hover: 0 4px 20px var(--hanko-glow);
+  --shadow-pip-window: 0 4px 24px rgba(0, 0, 0, 0.25);
+
+  /* Transitions */
+  --transition-hover: all 0.3s ease;
+  --transition-nav: background 0.4s, box-shadow 0.4s;
+  --transition-reveal: 0.7s ease;
+  --reveal-offset: 16px;
+
+  /* Grain */
+  --grain-size: 256px;
+
+  /* Feedback circle */
+  --circle-container: 280px;
+  --circle-silence: 45px;
+  --circle-within: 90px;
+  --circle-elevated: 160px;
+  --circle-sustained: 240px;
+}
+
+
+/* ═══════════════════════════════════════════
+   Typography Tokens
+   ═══════════════════════════════════════════ */
+
+/* ── Display — Noto Serif JP ── */
+
+.type-hero-heading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(38px, 5vw, 61px);
+  line-height: 115%;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.type-section-heading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(29px, 3.6vw, 42px);
+  line-height: 115%;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.type-step-heading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--text-default);
+}
+
+.type-step-number {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: 48px;
+  line-height: 100%;
+  color: #C25C41;
+}
+
+.type-statement {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--text-primary);
+}
+
+.type-sub-hero {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: 17px;
+  line-height: 170%;
+  color: var(--text-subdued);
+}
+
+.type-nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  font-size: 19px;
+  line-height: 100%;
+  color: var(--text-default);
+}
+
+.type-monitoring-within {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.type-monitoring-outside {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: 41px;
+  line-height: 115%;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.type-privacy-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: 28px;
+  line-height: 125%;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+/* ── Body — Sora ── */
+
+.type-hero-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 16px;
+  line-height: 180%;
+  color: var(--text-body);
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--text-body);
+}
+
+.type-situation {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 15px;
+  line-height: 150%;
+  color: var(--text-body);
+}
+
+.type-note {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--text-subdued);
+}
+
+.type-microcopy {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--text-subdued);
+}
+
+
+/* ── UI ── */
+
+.type-cta-primary {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: var(--hanko-on-fill);
+}
+
+.type-cta-outline {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--hanko-text);
+}
+
+.type-tag {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--hanko-text);
+}
+
+.type-pip-pill {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-subdued);
+}
+
+.type-state-label {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-ghost);
+}
+
+.type-footer-brand {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  color: var(--text-ghost);
+}
+
+.type-footer-link {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: 12px;
+  color: var(--text-subdued);
+}
+
+
+/* ═══════════════════════════════════════════
+   Component Tokens
+   ═══════════════════════════════════════════ */
+
+.btn-primary {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  color: var(--hanko-on-fill);
+  background: var(--hanko-fill);
+  padding: 13px 28px;
+  border-radius: var(--radius-cta);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+.btn-primary:hover {
+  background: var(--hanko-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+.btn-outline {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--hanko-text);
+  background: transparent;
+  padding: 6px 16px;
+  border-radius: var(--radius-cta);
+  border: 1px solid var(--border-outline);
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+.btn-outline:hover {
+  background: var(--hanko-fill);
+  border-color: var(--hanko-fill);
+  color: var(--hanko-on-fill);
+}
+
+.btn-stop {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 15px;
+  color: var(--hanko-on-fill);
+  background: var(--hanko-fill);
+  padding: 14px 48px;
+  border-radius: var(--radius-cta);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+
+.pip-pill {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-subdued);
+  background: var(--surface-card);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-pip);
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+.pip-pill:hover {
+  color: var(--hanko-text);
+  border-color: var(--border-outline);
+}
