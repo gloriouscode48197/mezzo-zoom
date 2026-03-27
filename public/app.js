@@ -13,6 +13,7 @@ async function initZoom() {
         'getMeetingContext',
         'getUserContext',
         'showNotification',
+        'openUrl',
       ],
       version: '0.16',
     });
@@ -215,6 +216,15 @@ btnRecalibrate.addEventListener('click', () => {
 if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
   showScreen('screen-popout');
 }
+
+document.getElementById('btn-open-browser').addEventListener('click', () => {
+  const url = 'https://mezzo-zoom.onrender.com';
+  if (zoomReady) {
+    zoomSdk.openUrl({ url }).catch(() => window.open(url, '_blank'));
+  } else {
+    window.open(url, '_blank');
+  }
+});
 
 // ── Init ──
 initZoom();
